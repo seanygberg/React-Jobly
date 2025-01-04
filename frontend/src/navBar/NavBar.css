@@ -1,0 +1,40 @@
+.NavBar {
+    background-color: white;
+    border-bottom: 2px solid lightgray;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.NavBar ul {
+    list-style: none; 
+    padding: 0;       
+    margin: 0;        
+    display: flex;    
+}
+
+.NavBar li {
+    margin: 0 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: gray;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: black;
+}
