@@ -13,7 +13,7 @@ const PORT = +process.env.PORT || 3001;
 function getDatabaseUri() {
   const dbUri = (process.env.NODE_ENV === "test")
     ? "postgresql://localhost/jobly_test"
-    : process.env.DATABASE_URL || "postgresql://postgres:Marist23@localhost:5432/jobly"; 
+    : process.env.DATABASE_URL || "postgresql://postgres.xequawuyyzjugogrsbll:HThrPf@RTw7zn2r@aws-0-us-west-1.pooler.supabase.com:5432/jobly"; 
 
   if (!dbUri.startsWith("postgresql://")) {
     throw new Error("Invalid database URI");

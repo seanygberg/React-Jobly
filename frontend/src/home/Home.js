@@ -8,10 +8,10 @@ function Home() {
     return (
         <div>
             <h1> Jobly </h1>
-            <p>All the jobs you need in one, very convenient place.</p>
+            <p>All the jobs you need.</p>
             {currentUser
                     ? <h2>
-                        Welcome Back, {currentUser.firstName || currentUser.username}!
+                        Great to see you again, {currentUser.firstName || currentUser.username}!
                     </h2>
                     : (
                         <div>

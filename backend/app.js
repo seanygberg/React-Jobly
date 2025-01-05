@@ -27,6 +27,14 @@ app.use("/companies", companiesRoutes);
 app.use("/users", usersRoutes);
 app.use("/jobs", jobsRoutes);
 
+app.use((req, res, next) => {
+  res.set("Cache-Control", "no-store");
+  next();
+});
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the API!');
+});
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {

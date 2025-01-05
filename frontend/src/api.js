@@ -26,7 +26,9 @@ class JoblyApi {
         : {};
 
     try {
-      return (await axios({ url, method, data, params, headers })).data;
+      const res = await axios({ url, method, data, params, headers });
+      console.log("API Response:", res);
+      return res.data;
     } catch (err) {
       console.error("API Error:", err.response);
       let message = err.response.data.error.message;
@@ -45,7 +47,7 @@ class JoblyApi {
 
   /** Get companies (filter by name) */
 
-  static async getCompanies(name) {
+  static async getCompanies(name = " ") {
     let res = await this.request(`companies`,{name});
     return res.company;
   }
@@ -77,7 +79,7 @@ class JoblyApi {
   }
 
   /** Signup */
-  static async signUp(data) {
+  static async signup(data) {
     let res = await this.request(`auth/register`, data, "post");
     return res.token;
   }
